@@ -105,9 +105,9 @@ local humourLines = {
     [[╦ ╦┬ ┬┌─┐┌┐┌  ┬ ┬┌─┐┬ ┬  ┬ ┬┌─┐┬  ┬┌─┐  ┌┬┐┌─┐  ┌─┐─┐ ┬┌─┐┬  ┌─┐┬┌┐┌  ┬┌┬┐]],
     [[║║║├─┤├┤ │││  └┬┘│ ││ │  ├─┤├─┤└┐┌┘├┤    │ │ │  ├┤ ┌┴┬┘├─┘│  ├─┤││││  │ │ ]],
     [[╚╩╝┴ ┴└─┘┘└┘   ┴ └─┘└─┘  ┴ ┴┴ ┴ └┘ └─┘   ┴ └─┘  └─┘┴ └─┴  ┴─┘┴ ┴┴┘└┘  ┴ ┴┘]],
-    [[                                                        ┬┌┬┐┌─┐  ┌┐ ┌─┐┌┬┐]],
-    [[                                                        │ │ └─┐  ├┴┐├─┤ ││]],
-    [[                                                        ┴ ┴ └─┘  └─┘┴ ┴─┴┘]],
+    [[                                                     ┬┌┬┐  ┬┌─┐  ┌┐ ┌─┐┌┬┐]],
+    [[                                                     │ │   │└─┐  ├┴┐├─┤ ││]],
+    [[                                                     ┴ ┴   ┴└─┘  └─┘┴ ┴─┴┘]],
     [[                                                              - Cory House]],
 }
 
@@ -237,6 +237,7 @@ local function configure()
             { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
             { type = "padding", val = 1 },
             dashboard.button("e", "  New file", "<cmd>ene<CR>"),
+            dashboard.button("n", "󰙅  File tree", "<cmd>Neotree<CR>"),
             dashboard.button("SPC ff", "  Find file"),
             dashboard.button("SPC fg", "  Find text"),
             dashboard.button("u", "󱐥  Update plugins", "<cmd>Lazy sync<CR>"),
