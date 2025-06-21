@@ -41,6 +41,20 @@ return {
             },
         }
 
+        dap.configurations.c = {
+            {
+                 name = "Launch",
+                 type = "codelldb",
+                 request = "launch",
+                 program = vim.fn.getcwd() .. "/a.out",
+                 -- function()
+                 --        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+                 -- end,
+                 cwd = "${workspaceFolder}",
+                 stopOnEntry = false,
+            },
+        }
+
         dapui.setup()
 
         dap.listeners.before.attach.dapui_config = function()
