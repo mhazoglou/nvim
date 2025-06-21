@@ -8,6 +8,37 @@ return {
         local dap = require("dap")
         local dapui = require("dapui")
 
+        dap.adapters.codelldb = {
+            type = "executable",
+            command = "codelldb",
+        }
+
+        dap.configurations.rust = {
+            {
+                 name = "Launch",
+                 type = "codelldb",
+                 request = "launch",
+                 program = function()
+                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+                 end,
+                 cwd = "${workspaceFolder}",
+                 stopOnEntry = false,
+            },
+        }
+
+        dap.configurations.zig = {
+            {
+                 name = "Launch",
+                 type = "codelldb",
+                 request = "launch",
+                 program = function()
+                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/zig-out/bin/", "file")
+                 end,
+                 cwd = "${workspaceFolder}",
+                 stopOnEntry = false,
+            },
+        }
+
         dapui.setup()
 
         dap.listeners.before.attach.dapui_config = function()
@@ -23,7 +54,7 @@ return {
             dapui.close()
         end
 
-        vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, {})
-        vim.keymap.set("n", "<Leader>dc", dap.continue, {})
+        vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, {})
+        vim.keymap.set("n", "<F5>", dap.continue, {})
     end,
 }
