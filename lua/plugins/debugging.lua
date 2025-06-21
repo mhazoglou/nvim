@@ -18,9 +18,10 @@ return {
                  name = "Launch",
                  type = "codelldb",
                  request = "launch",
-                 program = function()
-                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
-                 end,
+                 program = vim.fn.getcwd() .. "/target/debug/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t"),
+                 -- function()
+                 --        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+                 -- end,
                  cwd = "${workspaceFolder}",
                  stopOnEntry = false,
             },
@@ -31,9 +32,10 @@ return {
                  name = "Launch",
                  type = "codelldb",
                  request = "launch",
-                 program = function()
-                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/zig-out/bin/", "file")
-                 end,
+                 program = vim.fn.getcwd() .. "/zig-out/bin/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t"),
+                 -- function()
+                 --        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/zig-out/bin/", "file")
+                 -- end,
                  cwd = "${workspaceFolder}",
                  stopOnEntry = false,
             },
