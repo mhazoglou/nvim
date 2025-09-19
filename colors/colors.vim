@@ -20,4 +20,3 @@ hi StartLogoPop4 ctermfg=125 guifg=#a20066
 hi StartLogoPop5 ctermfg=89 guifg=#9a0069
 hi StartLogoPop6 ctermfg=89 guifg=#92006a
 hi StartLogoPop7 ctermfg=89 guifg=#8a006c
-
