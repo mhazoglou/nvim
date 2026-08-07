@@ -76,7 +76,7 @@ return {
 						name = "nvim_lsp",
 						entry_filter = function(entry, ctx)
 							--filters out plain text items from LSP suggestions
-							return require("cmp").lspCompletionItemKind.Text ~= entry:get_kind()
+							return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
 						end,
 					},
 					{ name = "luasnip" },
